@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "../components/layout/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,7 @@ export default function Home() {
     <div
       className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
     >
+      <Header />
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           className="dark:invert"
@@ -73,6 +75,24 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">Welcome to ALX Project 0x02</h1>
+        <p className="mb-4">Navigate to the pages using the header links.</p>
+        <div className="flex space-x-4">
+          <a
+            href="/home"
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Go to Home
+          </a>
+          <a
+            href="/about"
+            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+          >
+            Go to About
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
